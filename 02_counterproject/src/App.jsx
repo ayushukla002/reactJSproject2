@@ -6,12 +6,19 @@ function App() {
   //let counter = 2
 
   const addValue = () => {
-    console.log("clicked", counter);
+    if (counter == 20){
+      // console.log("it's 20");
+      return
+    }
+    // console.log("clicked", counter);
     setCounter(counter + 1)
   }
 
   const removeValue = () => {
-    console.log("remove clicked", counter);
+    if (counter == 0){
+      return
+    }
+    // console.log("remove clicked", counter);
     setCounter(counter - 1)
   }
 
@@ -21,11 +28,12 @@ function App() {
       <h2>counter: {counter}</h2>
       <button
       onClick={addValue}
-      >Add Value</button>
+      >Add Value {counter}</button>
       <br />
       <button
       onClick={removeValue}
-      >Remove Value</button>
+      >Remove Value {counter}</button>
+
     </>
   )
 }
